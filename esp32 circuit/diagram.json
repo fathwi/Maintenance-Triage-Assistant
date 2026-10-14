@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Muhammed Hussien",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 297.6,
+      "left": -119.96,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 339.82, "left": -256.88, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 232.8,
+      "left": 40.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 399.6, "left": -217, "attrs": { "color": "red" } },
+    { "type": "wokwi-ds18b20", "id": "temp1", "top": 181.27, "left": -139.92, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 399.6,
+      "left": -169,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "esp:GND.2", "imu1:GND", "black", [ "v-48", "h-28.8" ] ],
+    [ "esp:21", "imu1:SDA", "green", [ "h28.8", "v-105.6", "h9.6" ] ],
+    [ "esp:22", "imu1:SCL", "green", [ "h19.2", "v-57.6", "h-9.6" ] ],
+    [ "temp1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "temp1:GND", "esp:GND.2", "black", [ "v9.6", "h124.8", "v67.2" ] ],
+    [ "esp:4", "temp1:DQ", "green", [ "h38.4", "v-182.4", "h-9.6" ] ],
+    [ "esp:GND.2", "bz1:1", "black", [ "v0", "h86.4" ] ],
+    [ "bz1:2", "esp:23", "green", [ "v0" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h0" ] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h0" ] ],
+    [ "esp:27", "led2:A", "green", [ "h-19.05", "v19.2" ] ],
+    [ "esp:13", "led1:A", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,1535 @@
+[
+    {
+        "id": "00395c0db0284aed",
+        "type": "tab",
+        "label": "Maintenance Triage - SCA Replay",
+        "disabled": false,
+        "info": "Dashboard fed by the ESP32/Wokwi SCA dataset replay (MQTT topics muhammeedd1/triage/<device>/features|status)."
+    },
+    {
+        "id": "50487343d97d4ffa",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "",
+        "page": "",
+        "ui": "final_ui_base",
+        "name": "Global Dark CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "html,body,#app,[data-v-app],.v-application,.v-application__wrap,.v-main,.v-main__wrap,.nrdb-app,.nrdb-page,.nrdb-ui-page,.nrdb-ui-content,main,.v-container,.v-row,.v-col{background:#040a14!important;color:#e6edf7!important}html,body,#app,[data-v-app],.v-application,.v-application__wrap,.v-main,.v-main__wrap,.nrdb-app,.nrdb-page,.nrdb-ui-page{min-height:100vh!important}body{margin:0!important}.nrdb-ui-group{background:linear-gradient(145deg,#0b1628,#08111f)!important;border:1px solid #1c2d4d!important;border-radius:8px!important;box-shadow:0 6px 18px rgba(0,0,0,.5)!important}.nrdb-ui-widget{overflow:visible!important}.exact-home-group,.exact-home-group .nrdb-ui-widget{background:#040a14!important;border:0!important;box-shadow:none!important;padding:0!important}.wc-page{color:#e6edf7}.wc-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}.wc-title{font-size:25px;font-weight:800;color:#fff}.wc-sub{font-size:12px;color:#8fa7c8;margin-top:4px}.wc-badge{border:1px solid #29405f;background:#0a1728;border-radius:999px;padding:7px 12px;font-size:12px}.wc-badge.good{border-color:#14532d;background:#071a17;color:#22c55e}.wc-badge.bad{border-color:#7f1d1d;background:#241015;color:#fb7185}.wc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.wc-card{background:linear-gradient(145deg,#0d1a2f,#0a1526);border:1px solid #1c3554;border-radius:9px;padding:14px}.wc-s3{grid-column:span 3}.wc-s4{grid-column:span 4}.wc-s6{grid-column:span 6}.wc-s12{grid-column:span 12}.wc-label{font-size:11px;text-transform:uppercase;color:#8fa7c8}.wc-value{font-size:27px;font-weight:800;color:#fff;margin-top:5px}.wc-table{width:100%;border-collapse:collapse;font-size:12px}.wc-table th{text-align:left;color:#9fb3d1;background:#10243a;padding:10px 8px}.wc-table td{padding:10px 8px;border-bottom:1px solid #172b43}.wc-btn{border:0;border-radius:6px;background:#1478ff;color:#fff;padding:7px 11px;font-weight:700;cursor:pointer}.wc-empty{text-align:center;padding:30px;color:#64748b}.wc-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.wc-filter{border:1px solid #29405f;background:#0a1728;color:#cbd8ee;border-radius:6px;padding:6px 10px;font-size:11px}.s-Normal{color:#22c55e}.s-Warning{color:#facc15}.s-Fault{color:#ef4444}.s-Info{color:#38bdf8}.rowx{display:flex;justify-content:space-between;background:#0d1a2f;border:1px solid #1c2d4d;border-radius:5px;padding:8px 10px;margin-top:7px;font-size:13px}.rowx span{color:#9fb3d1}.action{border-left:3px solid #3b82f6;background:#091426;padding:10px;color:#dbeafe}.reason{line-height:1.55;color:#cbd8ee}@media(max-width:900px){.wc-s3,.wc-s4,.wc-s6{grid-column:span 12}}\n.wc-filter{cursor:pointer}.wc-filter.active{background:#1478ff;border-color:#1478ff;color:#fff}\n.wc-scroll{overflow-x:auto}\n.p-HIGH{color:#ef4444;font-weight:700}.p-MEDIUM{color:#facc15;font-weight:700}.p-LOW{color:#38bdf8}\n.st-NEW{color:#ef4444;font-weight:700}.st-ACKNOWLEDGED{color:#22c55e}\n:focus-visible{outline:2px solid #38bdf8;outline-offset:2px}\n@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}\n",
+        "storeOutMessages": false,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 490,
+        "y": 475,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce1a67729d754b57",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "",
+        "page": "final_page_home",
+        "ui": "",
+        "name": "Home Page CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".exact-home{color:#d9e6f7;background:#040a14;font-family:Inter,\"Segoe UI\",sans-serif;padding:0 8px 14px;min-height:calc(100vh - 64px)}.eh-header,.eh-panel,.eh-footer{background:linear-gradient(145deg,#0b1929,#081422);border:1px solid #1a3451;border-radius:7px}.eh-header{height:70px;display:flex;justify-content:space-between;align-items:center;padding:0 16px;margin-bottom:8px}.eh-title{font-size:20px;font-weight:750;color:#fff}.eh-sub{font-size:12px;color:#9fb3d1;margin-top:5px}.eh-head-right{display:flex;align-items:center;gap:16px;font-size:12px}.online-pill{border:1px solid #14532d;background:#071a17;color:#22c55e;border-radius:5px;padding:7px 12px}.online-pill.off{border-color:#7f1d1d;background:#241015;color:#fb7185}.eh-top{display:grid;grid-template-columns:3fr repeat(5,1fr);gap:7px;margin-bottom:8px}.eh-panel{padding:12px;overflow:hidden}.panel-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;border-bottom:1px solid #172b43;padding-bottom:8px;margin-bottom:8px}.motor-body{display:grid;grid-template-columns:220px 1fr;align-items:center}.motor-svg{width:210px;height:155px}.motor-data{font-size:11px}.motor-data div{display:grid;grid-template-columns:90px 1fr;gap:8px;margin:8px 0}.motor-data span{color:#91a7c7}.state-led{width:28px;height:28px;border-radius:50%;margin-left:auto}.state-text{font-size:17px;font-weight:750}.state-text small{display:block;color:#9fb3d1;font-size:11px;font-weight:400;margin-top:3px;max-width:210px}.gauge-panel{text-align:center;min-height:248px;display:flex;flex-direction:column;align-items:center}.g-title{height:31px;display:flex;gap:6px;align-items:center;font-size:13px;font-weight:800}.semi{width:148px;height:132px;position:relative;margin:4px auto -2px;overflow:hidden}.semi:before{content:'';position:absolute;left:5px;right:5px;top:4px;height:136px;border-radius:75px 75px 0 0;background:conic-gradient(from 225deg,#22c55e 0 190deg,#facc15 190deg 225deg,#ef4444 225deg 270deg,transparent 270deg)}.semi-hole{position:absolute;left:28px;right:28px;top:28px;height:105px;border-radius:55px 55px 0 0;background:#0b1728}.semi-value{position:absolute;inset:0;display:grid;place-items:center;padding-top:26px;font-size:25px;font-weight:850;color:#fff}.g-unit{font-size:12px;color:#d7e4f5}.g-status{font-size:13px;font-weight:700;margin:5px 0 2px}.g-limit{font-size:10px;color:#9fb3d1}.good{color:#22c55e!important}.warning{color:#facc15!important}.fault{color:#ef4444!important}.info{color:#38bdf8!important}.eh-mid,.eh-bottom{display:grid;grid-template-columns:5fr 3.5fr 3fr;gap:8px;margin-bottom:8px}.trends-panel,.sampling-panel,.events-panel{min-height:292px}.trend-svg{width:100%;height:205px;background:#071424;border:1px solid #19344f}.gridlines line{stroke:#1b3653;stroke-width:1}.tabs{display:flex;gap:5px;margin-bottom:7px}.tabs span,.tabs b{flex:1;text-align:center;padding:7px;border:1px solid #1c3551;border-radius:4px;font-size:10px}.tabs b{background:#087bff;color:#fff}.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.kpi-grid div{background:#0d2135;border:1px solid #1b3858;border-radius:7px;padding:12px}.kpi-grid span{font-size:10px;color:#9fb3d1;display:block}.kpi-grid b{font-size:22px;color:#fff;display:block;margin-top:6px}.events-panel table{width:100%;border-collapse:collapse;font-size:10px}.events-panel th{background:#10283c;padding:7px}.events-panel td{border-bottom:1px solid #1b3048;padding:7px}.vib-panel,.triage-panel,.fault-panel{min-height:310px}.vib-layout{display:grid;grid-template-columns:1fr 150px;gap:10px}.vib-stats div{display:flex;justify-content:space-between;background:#0d2135;border:1px solid #1b3858;padding:8px;font-size:10px}.fault-row{display:flex;justify-content:space-between;padding:8px 5px;border-bottom:1px solid #172b43;font-size:11px}.eh-footer{display:flex;justify-content:space-between;padding:12px 14px;font-size:10px;color:#9fb3d1}@media(max-width:1200px){.eh-top{grid-template-columns:repeat(3,1fr)}.motor-panel{grid-column:span 3}.eh-mid,.eh-bottom{grid-template-columns:1fr}}.tabs b{cursor:pointer;background:transparent!important}.tabs b.active{background:#087bff!important}.wc-btn:disabled{opacity:.45;cursor:not-allowed}@media(max-width:1500px) and (min-width:1201px){.eh-top{grid-template-columns:repeat(3,1fr)}.motor-panel{grid-column:span 3}}\n.exact-home.stale .gauge-panel,.exact-home.stale .motor-panel{opacity:.55}\n.inspect{color:#fb923c!important}\n.gsvg{width:100%;max-width:170px;height:auto;margin:2px auto 0}\n.g-read{font-size:24px;font-weight:800;color:#fff;line-height:1.1}.g-read small{font-size:12px;font-weight:400;color:#9fb3d1}\n.g-status{font-size:14px}.g-limit{font-size:11px;padding:0 4px}\n.banner{padding:10px 14px;border-radius:7px;margin-bottom:8px;font-size:13px;font-weight:700}\n.banner.bad{background:#2a1017;border:1px solid #7f1d1d;color:#fecaca}.banner.warn{background:#2a2410;border:1px solid #854d0e;color:#fde68a}\n.trend-cap{font-size:11px;color:#9fb3d1;margin-top:6px}\n.motor-data{font-size:12px}.events-panel table{font-size:12px}.vib-stats div{font-size:12px}.kpi-grid span{font-size:11px}.tabs b,.tabs span{font-size:12px}.fault-row{font-size:12px}.eh-footer{font-size:11px}\n",
+        "storeOutMessages": false,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 490,
+        "y": 515,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a2e20dee9e94186",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "final_group_home",
+        "page": "",
+        "ui": "",
+        "name": "Final Home Dashboard",
+        "order": 1,
+        "width": "12",
+        "height": "15",
+        "head": "",
+        "format": "<template><div class=\"exact-home\" :class=\"{stale:!d.online}\"><header class=\"eh-header\"><div><div class=\"eh-title\">Smart Industrial Motor Monitoring & Predictive Maintenance</div><div class=\"eh-sub\">Real-Time Monitoring &nbsp; | &nbsp; Fault Detection &nbsp; | &nbsp; Predictive Analytics &nbsp; | &nbsp; IoT Powered</div></div><div class=\"eh-head-right\"><span class=\"online-pill\" :class=\"{off:!d.online}\">{{d.online?'● System Online':'● System Offline'}}</span>&nbsp;&nbsp;{{date}}&nbsp;&nbsp;{{time}}&nbsp;&nbsp;<b>{{tz}}</b></div></header><div v-if=\"!d.online\" class=\"banner bad\" role=\"alert\">⚠ DATA STALE — {{d.reason||'No telemetry'}}. Values shown are the last known readings, not live data.</div><div v-else-if=\"unack>0\" class=\"banner warn\" role=\"alert\">🔔 {{unack}} unacknowledged alarm(s) — open Alarms &amp; Tickets to acknowledge.</div><section class=\"eh-top\"><article class=\"eh-panel motor-panel\"><div class=\"panel-title\">⚙ Motor Status <span class=\"state-led\" :style=\"{background:stateColor,boxShadow:'0 0 12px '+stateColor}\"></span><span class=\"state-text\" :style=\"{color:stateColor}\">{{d.condition||'WAITING'}}<small>{{d.reason||'Waiting for telemetry'}}</small></span></div><div class=\"motor-body\"><svg viewBox=\"0 0 240 170\" class=\"motor-svg\"><defs><linearGradient id=\"motorblue\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2594f2\"/><stop offset=\"1\" stop-color=\"#064d9c\"/></linearGradient></defs><rect x=\"18\" y=\"135\" width=\"150\" height=\"12\" rx=\"3\" fill=\"#0d3d78\"/><rect x=\"35\" y=\"49\" width=\"128\" height=\"88\" rx=\"18\" fill=\"url(#motorblue)\"/><g stroke=\"#07396f\" stroke-width=\"3\"><line v-for=\"x in [55,72,89,106,123,140]\" :key=\"x\" :x1=\"x\" y1=\"53\" :x2=\"x\" y2=\"134\"/></g><rect x=\"150\" y=\"66\" width=\"31\" height=\"55\" rx=\"8\" fill=\"#1769ba\"/><ellipse cx=\"180\" cy=\"94\" rx=\"14\" ry=\"28\" fill=\"#0b56a1\"/><rect x=\"188\" y=\"84\" width=\"48\" height=\"18\" rx=\"3\" fill=\"#adb7c5\"/></svg><div class=\"motor-data\"><div><span>Motor ID</span><b>{{d.device_id||'MOTOR_01'}}</b></div><div><span>Motor Type</span><b>IoT Monitoring Prototype</b></div><div><span>Sensors</span><b>MPU6050 + DS18B20</b></div><div><span>Firmware</span><b>{{d.firmware_version||'-'}}</b></div><div><span>Data Source</span><b>{{d.data_source||'-'}}</b></div><div><span>Last Seen</span><b>{{d.last_seen_text||'Never'}}</b></div></div></div></article><article v-for=\"g in gauges\" :key=\"g.title\" class=\"eh-panel gauge-panel\" role=\"img\" :aria-label=\"g.title+' '+g.value+' '+g.unit+' '+g.status\"><div class=\"g-title\">{{g.title}}</div><svg viewBox=\"0 0 160 100\" class=\"gsvg\"><path v-for=\"(z,i) in g.segs\" :key=\"i\" :d=\"z.d\" :stroke=\"z.c\" fill=\"none\" stroke-width=\"10\"/><line x1=\"80\" y1=\"84\" :x2=\"g.nx\" :y2=\"g.ny\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"84\" r=\"5\" fill=\"#fff\"/></svg><div class=\"g-read\">{{g.value}} <small>{{g.unit}}</small></div><div class=\"g-status\" :class=\"g.cls\">{{g.icon}} {{g.status}}</div><div class=\"g-limit\">{{g.limit}}</div></article></section><section class=\"eh-mid\"><article class=\"eh-panel trends-panel\"><div class=\"panel-title\">〽 Real-Time Trends</div><div class=\"tabs\"><b v-for=\"t in trendTabs\" :key=\"t.key\" :class=\"{active:selectedTrend===t.key}\" @click=\"selectedTrend=t.key\">{{t.label}}</b></div><svg viewBox=\"0 0 600 245\" preserveAspectRatio=\"none\" class=\"trend-svg\"><g class=\"gridlines\"><line v-for=\"y in [25,70,115,160,205]\" :key=\"y\" x1=\"40\" :y1=\"y\" x2=\"590\" :y2=\"y\"/></g><polyline :points=\"points(selectedHistory)\" fill=\"none\" :stroke=\"selectedColor\" stroke-width=\"3\"/></svg><div class=\"trend-cap\">Last {{selectedHistory.length}} samples · min {{hist.min}} · max {{hist.max}} · latest {{hist.last}}</div></article><article class=\"eh-panel sampling-panel\"><div class=\"panel-title\">☷ Sampling & Calibration</div><div class=\"kpi-grid\"><div><span>Sample Rate</span><b>{{f(d.sample_rate,1)}} Hz</b></div><div><span>Completeness</span><b>{{f(d.completeness,1)}}%</b></div><div><span>Samples</span><b>{{d.sample_count||0}}</b></div><div><span>Window</span><b :class=\"d.window_valid?'good':'fault'\">{{d.window_valid?'VALID':'INVALID'}}</b></div></div><div class=\"rowx\"><span>Calibration</span><b>{{d.calibration_status||'-'}} {{d.calibration_windows||0}}/{{d.calibration_required||12}}</b></div><div class=\"rowx\"><span>Baseline RMS</span><b>{{f(d.baseline,6)}} m/s²</b></div></article><article class=\"eh-panel events-panel\"><div class=\"panel-title\">🔔 Alarms & Events</div><table><thead><tr><th>Time</th><th>Event</th><th>Status</th></tr></thead><tbody><tr v-for=\"(e,i) in events.slice(0,6)\" :key=\"i\"><td>{{e.t}}</td><td>{{e.e}}</td><td :class=\"'s-'+e.s\">{{e.s}}</td></tr></tbody></table><div v-if=\"!events.length\" class=\"wc-empty\">No events yet</div></article></section><section class=\"eh-bottom\"><article class=\"eh-panel vib-panel\"><div class=\"panel-title\">∿ Vibration Analysis</div><div class=\"vib-layout\"><svg viewBox=\"0 0 460 210\" class=\"trend-svg\"><polyline :points=\"points(rmsHistory,30,450)\" fill=\"none\" stroke=\"#2196f3\" stroke-width=\"3\"/><polyline :points=\"points(peakHistory,30,450)\" fill=\"none\" stroke=\"#22c55e\" stroke-width=\"3\"/></svg><div class=\"vib-stats\"><div><span>Total RMS</span><b>{{f(d.total_rms,6)}}</b></div><div><span>AC RMS</span><b>{{f(d.ac_rms,6)}}</b></div><div><span>AC Peak</span><b>{{f(d.ac_peak,6)}}</b></div><div><span>Peak-to-Peak</span><b>{{f(d.peak_to_peak,6)}}</b></div></div></div></article><article class=\"eh-panel triage-panel\"><div class=\"panel-title\">▥ Maintenance Triage</div><div class=\"rowx\"><span>Confirmed Condition</span><b :style=\"{color:stateColor}\">{{d.condition||'WAITING'}}</b></div><div class=\"rowx\"><span>Priority</span><b>{{d.priority||'NONE'}}</b></div><div class=\"reason\"><b>Reason</b><br>{{d.reason||'-'}}</div><div class=\"action\"><b>Recommended Action</b><br>{{d.recommended_action||'-'}}</div><div style=\"display:flex;gap:8px;margin-top:10px\"><button class=\"wc-btn\" style=\"flex:1\" :disabled=\"d.calibration_status==='IN_PROGRESS'||!d.online\" @click=\"requestRecalibrate\">Recalibrate Baseline</button><button class=\"wc-btn\" :disabled=\"!d.online\" @click=\"send({payload:{action:'PING'}})\">Ping</button></div></article><article class=\"eh-panel fault-panel\"><div class=\"panel-title\">🔧 Fault Detection</div><div v-for=\"r in assessment\" :key=\"r.n\" class=\"fault-row\"><span>{{r.n}}</span><b :class=\"r.c\">● {{r.s}}</b></div></article></section><footer class=\"eh-footer\"><span>Smart Industrial Motor Monitoring System | Built with Node-RED | IoT for a Smarter Tomorrow</span><span>{{d.online?'● Connected to MQTT':'● MQTT Disconnected'}} | Data Logging Enabled</span></footer></div></template><script>export default{data(){return{lastSeq:null,tz:'',date:'',time:'',timer:null,selectedTrend:'temperature',trendTabs:[{key:'temperature',label:'Temperature'},{key:'rms',label:'AC RMS'},{key:'peak',label:'AC Peak'},{key:'ratio',label:'Deviation'}],tempHistory:[],rmsHistory:[],peakHistory:[],ratioHistory:[]}},computed:{th(){const t=this.d.thresholds||{};const m=(a,b)=>Object.assign({},a,b);return{temp:m({observe:60,inspect:70,critical:80,max:120},t.temp),ratio:m({observe:1.5,inspect:2,critical:3,max:4},t.ratio),peak:m({elevated:0.04,high:0.065,max:0.1},t.peak),comp:m({good:90,min:80},t.completeness),rate:t.targetRate||100}},unack(){return Array.isArray(this.d.tickets)?this.d.tickets.filter(x=>x.status==='NEW').length:0},hist(){const a=this.selectedHistory;if(!a.length)return{min:'N/A',max:'N/A',last:'N/A'};const n=this.selectedTrend==='temperature'?1:4;return{min:Math.min(...a).toFixed(n),max:Math.max(...a).toFixed(n),last:a[a.length-1].toFixed(n)}},d(){return this.msg&&this.msg.payload?this.msg.payload:{}},stateColor(){return({NORMAL:'#22c55e',CALIBRATING:'#2196f3',OBSERVE:'#facc15',INSPECT:'#fb923c',CRITICAL:'#ef4444',SENSOR_ERROR:'#ef4444',OFFLINE:'#94a3b8'})[this.d.condition]||'#94a3b8'},events(){return Array.isArray(this.d.events)?this.d.events:[]},selectedHistory(){return this.selectedTrend==='rms'?this.rmsHistory:this.selectedTrend==='peak'?this.peakHistory:this.selectedTrend==='ratio'?this.ratioHistory:this.tempHistory},selectedColor(){return this.selectedTrend==='rms'?'#38bdf8':this.selectedTrend==='peak'?'#22c55e':this.selectedTrend==='ratio'?'#facc15':'#ef4444'},gauges(){const d=this.d,T=this.th,C={g:'#22c55e',y:'#facc15',o:'#fb923c',r:'#ef4444'};\nconst has=n=>n!=null&&Number.isFinite(Number(n)),cl=f=>Math.max(0,Math.min(1,f));\nconst lvl=(x,o,i,c)=>x>=c?{s:'Critical',c:'fault',i:'■'}:x>=i?{s:'Inspect',c:'inspect',i:'◆'}:x>=o?{s:'Observe',c:'warning',i:'▲'}:{s:'Normal',c:'good',i:'●'};\nconst mk=(title,v,dec,unit,max,zones,frac,st,limit)=>{const ok=has(v),a=Math.PI*(1-cl(ok?frac:0));return{title,value:ok?Number(v).toFixed(dec):'N/A',unit,segs:zones.map(z=>({d:this.arc(z[0]/max,z[1]/max),c:z[2]})),nx:80+52*Math.cos(a),ny:84-52*Math.sin(a),status:ok?st.s:'No data',cls:ok?st.c:'info',icon:ok?st.i:'○',limit}};\nconst tp=Number(d.motor_temp),r=Number(d.deviation_ratio),pk=Number(d.ac_peak),cp=Number(d.completeness),X=T.temp,R=T.ratio,P=T.peak,Q=T.comp;\nconst rz=[[0,R.observe,C.g],[R.observe,R.inspect,C.y],[R.inspect,R.critical,C.o],[R.critical,R.max,C.r]];\nreturn[\nmk('Temperature',d.motor_temp,1,'°C',X.max,[[0,X.observe,C.g],[X.observe,X.inspect,C.y],[X.inspect,X.critical,C.o],[X.critical,X.max,C.r]],tp/X.max,lvl(tp,X.observe,X.inspect,X.critical),'Observe ≥ '+X.observe+' · Inspect ≥ '+X.inspect+' · Critical ≥ '+X.critical),\nmk('AC RMS',d.ac_rms,4,'m/s²',R.max,rz,has(d.deviation_ratio)?r/R.max:0,lvl(r,R.observe,R.inspect,R.critical),'Needle: × baseline (0–'+R.max+'×)'),\nmk('AC Peak',d.ac_peak,4,'m/s²',P.max,[[0,P.elevated,C.g],[P.elevated,P.high,C.y],[P.high,P.max,C.r]],pk/P.max,pk>=P.high?{s:'High',c:'fault',i:'■'}:pk>=P.elevated?{s:'Elevated',c:'warning',i:'▲'}:{s:'Normal',c:'good',i:'●'},'Elevated ≥ '+P.elevated+' · High ≥ '+P.high),\nmk('Deviation',d.deviation_ratio,2,'× baseline',R.max,rz,r/R.max,lvl(r,R.observe,R.inspect,R.critical),'Observe ≥ '+R.observe+'× · Inspect ≥ '+R.inspect+'× · Critical ≥ '+R.critical+'×'),\nmk('Sampling',d.completeness,0,'%',100,[[0,Q.min,C.r],[Q.min,Q.good,C.y],[Q.good,100,C.g]],cp/100,cp>=Q.good?{s:'Good',c:'good',i:'●'}:cp>=Q.min?{s:'Acceptable',c:'warning',i:'▲'}:{s:'Invalid',c:'fault',i:'■'},'Target ≥ '+Q.good+'% · Valid ≥ '+Q.min+'%')\n]},assessment(){const d=this.d,T=this.th,has=n=>n!=null&&Number.isFinite(Number(n));\nconst lv=(x,o,i)=>!has(x)?{s:'No data',c:'info'}:Number(x)>=i?{s:'Fault',c:'fault'}:Number(x)>=o?{s:'Warning',c:'warning'}:{s:'Normal',c:'good'};\nconst a=lv(d.motor_temp,T.temp.observe,T.temp.inspect),b=lv(d.deviation_ratio,T.ratio.observe,T.ratio.inspect);\nconst sh=!d.sensor_status?{s:'No data',c:'info'}:d.sensor_status==='VALID'?{s:'Normal',c:'good'}:{s:'Fault',c:'fault'};\nconst wv=d.window_valid===undefined?{s:'No data',c:'info'}:d.window_valid?{s:'Normal',c:'good'}:{s:'Fault',c:'fault'};\nreturn[{n:'Sensor Health',s:sh.s,c:sh.c},{n:'Sampling Window',s:wv.s,c:wv.c},{n:'Over Temperature',s:a.s,c:a.c},{n:'High Vibration',s:b.s,c:b.c},{n:'Calibration',s:d.calibration_status==='COMPLETED'?'Normal':'In Progress',c:d.calibration_status==='COMPLETED'?'good':'info'}]}},watch:{msg:{handler(){this.addHistory()},deep:true}},mounted(){try{this.tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}this.tick();this.timer=setInterval(this.tick,1000);this.addHistory()},beforeUnmount(){clearInterval(this.timer)},methods:{arc(f1,f2){const r=62,cx=80,cy=84,p=f=>{const a=Math.PI*(1-f);return[cx+r*Math.cos(a),cy-r*Math.sin(a)]};const A=p(f1),B=p(f2);return'M'+A[0].toFixed(1)+' '+A[1].toFixed(1)+' A'+r+' '+r+' 0 0 1 '+B[0].toFixed(1)+' '+B[1].toFixed(1)},requestRecalibrate(){if(window.confirm('Reset the learned vibration baseline and start a new calibration cycle?'))this.send({payload:{action:'RECALIBRATE',user:'Dashboard Engineer'}})},f(v,n){return v===null||v===undefined||!Number.isFinite(Number(v))?'N/A':Number(v).toFixed(n)},tick(){let d=new Date(),q=n=>('0'+n).slice(-2);this.date=d.getFullYear()+'-'+q(d.getMonth()+1)+'-'+q(d.getDate());this.time=q(d.getHours())+':'+q(d.getMinutes())+':'+q(d.getSeconds())},addHistory(){const k=this.d.last_seen_ms;if(k==null||k===this.lastSeq)return;this.lastSeq=k;this.push(this.tempHistory,this.d.motor_temp);this.push(this.rmsHistory,this.d.ac_rms);this.push(this.peakHistory,this.d.ac_peak);this.push(this.ratioHistory,this.d.deviation_ratio)},push(a,v){if(v==null||!Number.isFinite(Number(v)))return;a.push(Number(v));if(a.length>24)a.shift()},points(a,xl=40,xr=590){if(!a.length)return'';let mn=Math.min(...a),mx=Math.max(...a);if(mx===mn)mx=mn+1;return a.map((v,i)=>{let x=xl+(xr-xl)*(i/Math.max(1,a.length-1)),y=210-180*((v-mn)/(mx-mn));return x+','+y}).join(' ')}}}</script>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1540,
+        "y": 615,
+        "wires": [
+            [
+                "df4a30f6e67044b3"
+            ]
+        ]
+    },
+    {
+        "id": "259a21b91fe046ba",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "final_group_kpis",
+        "page": "",
+        "ui": "",
+        "name": "Final KPI Dashboard",
+        "order": 1,
+        "width": "12",
+        "height": "15",
+        "head": "",
+        "format": "<template><div class=\"wc-page\"><div class=\"wc-head\"><div><div class=\"wc-title\">KPIs & Motor State</div><div class=\"wc-sub\">Live condition, sensing quality, calibration, and device information</div></div><span class=\"wc-badge\" :class=\"d.online?'good':'bad'\">{{d.online?'ONLINE':'OFFLINE'}}</span></div><div class=\"wc-grid\"><div class=\"wc-card wc-s4\"><div class=\"wc-label\">Confirmed Condition</div><div class=\"wc-value\" :style=\"{color:color}\">{{d.condition||'WAITING'}}</div></div><div class=\"wc-card wc-s4\"><div class=\"wc-label\">Priority</div><div class=\"wc-value\">{{d.priority||'NONE'}}</div></div><div class=\"wc-card wc-s4\"><div class=\"wc-label\">Sensor Status</div><div class=\"wc-value\">{{d.sensor_status||'WAITING'}}</div></div><div v-for=\"k in cards\" :key=\"k.l\" class=\"wc-card wc-s3\"><div class=\"wc-label\">{{k.l}}</div><div class=\"wc-value\">{{k.v}}</div><div class=\"wc-sub\">{{k.s}}</div></div><div class=\"wc-card wc-s6\"><div class=\"wc-title\" style=\"font-size:17px\">Calibration</div><div class=\"rowx\"><span>Status</span><b>{{d.calibration_status||'WAITING'}}</b></div><div class=\"rowx\"><span>Progress</span><b>{{d.calibration_windows||0}} / {{d.calibration_required||12}}</b></div><div class=\"rowx\"><span>Baseline RMS</span><b>{{f(d.baseline,6)}} m/s²</b></div></div><div class=\"wc-card wc-s6\"><div class=\"wc-title\" style=\"font-size:17px\">System Details</div><div class=\"rowx\"><span>Device</span><b>{{d.device_id||'MOTOR_01'}}</b></div><div class=\"rowx\"><span>Firmware</span><b>{{d.firmware_version||'-'}}</b></div><div class=\"rowx\"><span>Data Source</span><b>{{d.data_source||'-'}}</b></div></div></div></div></template><script>export default{computed:{th(){const t=this.d.thresholds||{};const m=(a,b)=>Object.assign({},a,b);return{temp:m({observe:60,inspect:70,critical:80,max:120},t.temp),ratio:m({observe:1.5,inspect:2,critical:3,max:4},t.ratio),peak:m({elevated:0.04,high:0.065,max:0.1},t.peak),comp:m({good:90,min:80},t.completeness),rate:t.targetRate||100}},d(){return this.msg&&this.msg.payload?this.msg.payload:{}},color(){return({NORMAL:'#22c55e',CALIBRATING:'#2196f3',OBSERVE:'#facc15',INSPECT:'#fb923c',CRITICAL:'#ef4444',SENSOR_ERROR:'#ef4444',OFFLINE:'#94a3b8'})[this.d.condition]||'#94a3b8'},cards(){return[{l:'Motor Temperature',v:this.f(this.d.motor_temp,2)+' °C',s:'Observe '+this.th.temp.observe+' · Inspect '+this.th.temp.inspect+' · Critical '+this.th.temp.critical},{l:'AC Vibration RMS',v:this.f(this.d.ac_rms,6)+' m/s²',s:'Dynamic vibration energy'},{l:'AC Vibration Peak',v:this.f(this.d.ac_peak,6)+' m/s²',s:'Maximum deviation'},{l:'Deviation Ratio',v:this.f(this.d.deviation_ratio,3)+'×',s:'Observe '+this.th.ratio.observe+' · Inspect '+this.th.ratio.inspect+' · Critical '+this.th.ratio.critical},{l:'Sample Rate',v:this.f(this.d.sample_rate,1)+' Hz',s:'Target '+this.th.rate+' Hz'},{l:'Completeness',v:this.f(this.d.completeness,1)+'%',s:'Valid window ≥ '+this.th.comp.min+'%'},{l:'Samples',v:this.d.sample_count==null?'N/A':this.d.sample_count,s:'Current five-second window'},{l:'Data Freshness',v:this.d.data_status||'WAITING',s:this.d.last_seen_text||'Never'}]}},methods:{f(v,n){return v==null||!Number.isFinite(Number(v))?'N/A':Number(v).toFixed(n)}}}</script>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1530,
+        "y": 575,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "691f77e650cb4ff5",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "final_group_alarms",
+        "page": "",
+        "ui": "",
+        "name": "Final Alarms and Acknowledge",
+        "order": 1,
+        "width": "12",
+        "height": "16",
+        "head": "",
+        "format": "<template><div class=\"wc-page\"><div class=\"wc-head\"><div><div class=\"wc-title\">Alarm Management Center</div><div class=\"wc-sub\">Active alarms, acknowledgement workflow, maintenance tickets, and event history</div></div><div class=\"wc-toolbar\"><span class=\"wc-badge\" :class=\"d.online?'good':'bad'\">{{d.online?'DEVICE ONLINE':'DEVICE OFFLINE'}}</span><span class=\"wc-badge bad\">{{newCount}} NEW</span><span class=\"wc-badge good\">{{ackCount}} ACKNOWLEDGED</span></div></div><div class=\"wc-grid\"><div class=\"wc-card wc-s3\"><div class=\"wc-label\">Current Condition</div><div class=\"wc-value\">{{d.condition||'WAITING'}}</div></div><div class=\"wc-card wc-s3\"><div class=\"wc-label\">Active Alarms</div><div class=\"wc-value\">{{newCount}}</div></div><div class=\"wc-card wc-s3\"><div class=\"wc-label\">Acknowledged</div><div class=\"wc-value\">{{ackCount}}</div></div><div class=\"wc-card wc-s3\"><div class=\"wc-label\">Latest Event</div><div class=\"wc-value\" style=\"font-size:15px\">{{events.length?events[0].e:'No events'}}</div></div><div class=\"wc-card wc-s12\"><div class=\"wc-head\"><div><div class=\"wc-title\" style=\"font-size:18px\">Alarms Requiring Acknowledgement</div></div><div class=\"wc-toolbar\"><button class=\"wc-filter\" :class=\"{active:filter==='ALL'}\" @click=\"filter='ALL'\">All</button><button class=\"wc-filter\" :class=\"{active:filter==='NEW'}\" @click=\"filter='NEW'\">New</button><button class=\"wc-filter\" :class=\"{active:filter==='ACKNOWLEDGED'}\" @click=\"filter='ACKNOWLEDGED'\">Acknowledged</button><button class=\"wc-btn\" :disabled=\"!newCount\" @click=\"ackAll\">Acknowledge all</button></div></div><div class=\"wc-scroll\"><table class=\"wc-table\"><thead><tr><th>Alarm ID</th><th>Created</th><th>Priority</th><th>Condition</th><th>Reason</th><th>Status</th><th>Acknowledged At</th><th>Cleared</th><th>Action</th></tr></thead><tbody><tr v-for=\"t in filtered\" :key=\"t.ticket_id\"><td><b>{{t.ticket_id}}</b></td><td>{{t.created_at}}</td><td :class=\"'p-'+t.priority\">{{t.priority}}</td><td>{{t.condition}}</td><td>{{t.reason}}</td><td :class=\"'st-'+t.status\">{{t.status}}</td><td>{{t.acknowledged_at||'-'}}</td><td>{{t.cleared_at||(t.cleared_at===undefined?'-':'Active')}}</td><td><button v-if=\"t.status==='NEW'\" class=\"wc-btn\" @click=\"ack(t.ticket_id)\">Acknowledge</button><span v-else class=\"s-Normal\">Completed</span></td></tr></tbody></table></div><div v-if=\"!filtered.length\" class=\"wc-empty\">No alarms match the selected filter</div></div><div class=\"wc-card wc-s12\"><div class=\"wc-title\" style=\"font-size:18px;margin-bottom:10px\">Event History</div><div class=\"wc-scroll\"><table class=\"wc-table\"><thead><tr><th>Timestamp</th><th>Event</th><th>Severity</th></tr></thead><tbody><tr v-for=\"(e,i) in events\" :key=\"i\"><td>{{e.t}}</td><td>{{e.e}}</td><td :class=\"'s-'+e.s\">{{e.s}}</td></tr></tbody></table></div><div v-if=\"!events.length\" class=\"wc-empty\">No events recorded</div></div></div></div></template><script>export default{data(){return{filter:'ALL'}},computed:{d(){return this.msg&&this.msg.payload?this.msg.payload:{}},tickets(){return Array.isArray(this.d.tickets)?this.d.tickets:[]},events(){return Array.isArray(this.d.events)?this.d.events:[]},newCount(){return this.tickets.filter(t=>t.status==='NEW').length},ackCount(){return this.tickets.filter(t=>t.status==='ACKNOWLEDGED').length},filtered(){return this.filter==='ALL'?this.tickets:this.tickets.filter(t=>t.status===this.filter)}},methods:{ackAll(){this.tickets.filter(x=>x.status==='NEW').forEach(x=>this.ack(x.ticket_id))},ack(id){this.send({payload:{action:'ACK',ticket_id:id}})}}}</script>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1560,
+        "y": 535,
+        "wires": [
+            [
+                "df4a30f6e67044b3"
+            ]
+        ]
+    },
+    {
+        "id": "5a57280502aa4d16",
+        "type": "ui-template",
+        "z": "00395c0db0284aed",
+        "group": "final_group_trends_header",
+        "page": "",
+        "ui": "",
+        "name": "Final Trends Header",
+        "order": 1,
+        "width": "12",
+        "height": "2",
+        "head": "",
+        "format": "<template><div class=\"wc-page\"><div class=\"wc-head\"><div><div class=\"wc-title\">System Trends & Signal Analytics</div><div class=\"wc-sub\">Each variable has an independent chart to preserve units and scale</div></div><div class=\"wc-toolbar\"><span class=\"wc-badge\" :class=\"d.online?'good':'bad'\">{{d.online?'LIVE TELEMETRY':'WAITING FOR TELEMETRY'}}</span><span class=\"wc-badge\">{{d.last_seen_text||'Never'}}</span></div></div><div v-if=\"!d.online\" class=\"action\">Charts will populate automatically after ESP32 MQTT telemetry arrives.</div></div></template><script>export default{computed:{d(){return this.msg&&this.msg.payload?this.msg.payload:{}}}}</script>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1530,
+        "y": 495,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0dbf955c23b4d19",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_temp",
+        "name": "Motor Temperature Chart",
+        "label": "Motor Temperature History (°C)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "°C",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#f97316"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 205,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08e70c27768e4dfe",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_mput",
+        "name": "MPU Temperature Chart",
+        "label": "MPU6050 Temperature History (°C)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "°C",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#22c55e"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "854d2fa89ee24cde",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_rms",
+        "name": "AC RMS Chart",
+        "label": "AC Vibration RMS History (m/s²)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "m/s²",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#3b82f6"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 275,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8fb31b730e840cc",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_peak",
+        "name": "AC Peak Chart",
+        "label": "AC Vibration Peak History (m/s²)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "m/s²",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#a855f7"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 310,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec2b59d1768e41bb",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_base",
+        "name": "Baseline RMS Chart",
+        "label": "Baseline RMS History (m/s²)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "m/s²",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#facc15"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 345,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee510b6061c44cac",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_ratio",
+        "name": "Deviation Ratio Chart",
+        "label": "Deviation Ratio History (× Baseline)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "×",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#fb923c"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ec1bdf603b34f0e",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_rate",
+        "name": "Sample Rate Chart",
+        "label": "Sample Rate History (Hz)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Hz",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#22c55e"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 415,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c55c7f07fc654d0a",
+        "type": "ui-chart",
+        "z": "00395c0db0284aed",
+        "group": "trend_group_comp",
+        "name": "Completeness Chart",
+        "label": "Sampling Completeness History (%)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "Time",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "%",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": "30",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#38bdf8"
+        ],
+        "textColor": [
+            "#9fb3d1"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#1c2d4d"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "4",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1530,
+        "y": 450,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6773c5afd75f4a89",
+        "type": "mqtt in",
+        "z": "00395c0db0284aed",
+        "name": "SCA Replay Features",
+        "topic": "muhammeedd1/triage/+/features",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "final_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 420,
+        "y": 635,
+        "wires": [
+            [
+                "1f07640460924332"
+            ]
+        ]
+    },
+    {
+        "id": "f945879fc4c94fff",
+        "type": "mqtt in",
+        "z": "00395c0db0284aed",
+        "name": "SCA Replay Status",
+        "topic": "muhammeedd1/triage/+/status",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "final_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 760,
+        "wires": [
+            [
+                "32eec98cfdb44a48"
+            ]
+        ]
+    },
+    {
+        "id": "7a7b1d9391d24eca",
+        "type": "mqtt in",
+        "z": "00395c0db0284aed",
+        "name": "SCA Replay Events (unused)",
+        "topic": "muhammeedd1/triage/+/event",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "final_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 820,
+        "wires": [
+            [
+                "ae37c38c1a2a4064"
+            ]
+        ]
+    },
+    {
+        "id": "29dbaa74c6e64331",
+        "type": "mqtt out",
+        "z": "00395c0db0284aed",
+        "name": "Send ESP32 Command",
+        "topic": "ahmed-yasser/motor01/command",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "final_mqtt_broker",
+        "x": 1820,
+        "y": 775,
+        "wires": []
+    },
+    {
+        "id": "7f59e62db3a24d4d",
+        "type": "file",
+        "z": "00395c0db0284aed",
+        "name": "Log Telemetry",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2080,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ca89a57e0fd426b",
+        "type": "file",
+        "z": "00395c0db0284aed",
+        "name": "Log Events",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2070,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81e01142bf0543d7",
+        "type": "file",
+        "z": "00395c0db0284aed",
+        "name": "Save Tickets",
+        "filename": "motor_data/motor_tickets.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1670,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f07640460924332",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Adapt SCA Replay, Triage and Route",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nconst mkId=()=>{const n=(flow.get('alarmSeq')||0)+1;flow.set('alarmSeq',n);return 'ALM-'+fmt(new Date()).replace(/[-: ]/g,'')+'-'+String(n).padStart(3,'0');};\nconst TH={temp:{observe:60,inspect:70,critical:80,max:120},ratio:{observe:1.5,inspect:2,critical:3,max:4},peak:{elevated:0.04,high:0.065,max:0.1},completeness:{good:90,min:80},targetRate:100,staleSec:15,offlineAlarmSec:30};\nlet d=msg.payload;\nif(typeof d==='string'){try{d=JSON.parse(d)}catch(e){node.warn('Rejected malformed replay JSON');return null;}}\nif(!d||!d.device_id||!d.features||!d.triage_preview){node.warn('Rejected replay message: missing device_id/features/triage_preview');return null;}\nconst now=Date.now();\nconst num=v=>(v===null||v===undefined||v===''||!Number.isFinite(Number(v)))?null:Number(v);\nconst tp=d.triage_preview,f=d.features;\nconst rms=num(f.rms),ratio=num(tp.rms_ratio),obs=num(tp.observe_threshold),insp=num(tp.inspect_threshold);\n// per-asset/sensor thresholds come from the replay code (calculated offline from TRAIN normal data)\nif(obs!==null&&insp!==null&&insp>0){TH.ratio={observe:obs,inspect:insp,critical:insp*1.5,max:insp*2};}\nconst MAP={NORMAL:'NORMAL',OBSERVE:'OBSERVE',INSPECT:'INSPECT',INVALID_DATA:'SENSOR_ERROR',NO_BASELINE:'SENSOR_ERROR',NO_THRESHOLD:'SENSOR_ERROR'};\nconst condition=MAP[tp.status]||'SENSOR_ERROR';\nconst PRI={NORMAL:'NONE',OBSERVE:'LOW',INSPECT:'HIGH',SENSOR_ERROR:'HIGH'};\nconst where='asset '+d.asset_id+' / '+d.sensor;\nlet reason,action;\nif(condition==='NORMAL'){reason='RMS ratio within the normal range for '+where;action='No action required';}\nelse if(condition==='OBSERVE'){reason='RMS ratio '+(ratio===null?'N/A':ratio.toFixed(3))+'x baseline reached the OBSERVE threshold ('+(obs===null?'N/A':obs.toFixed(3))+'x) on '+where;action='Keep monitoring; check the trend over the next windows';}\nelse if(condition==='INSPECT'){reason='RMS ratio '+(ratio===null?'N/A':ratio.toFixed(3))+'x baseline reached the INSPECT threshold ('+(insp===null?'N/A':insp.toFixed(3))+'x) on '+where;action='Schedule a physical inspection of the machine';}\nelse{reason=(tp.reason||tp.status||'Invalid data')+' ('+where+')';action='Check the dataset row / baseline / threshold files for this asset and sensor';}\nconst baseline=(rms!==null&&ratio!==null&&ratio>0)?rms/ratio:null;\nlet s=flow.get('state')||{};\nObject.assign(s,{thresholds:TH,device_id:d.device_id,asset_id:d.asset_id,sensor:d.sensor,rpm:num(d.rpm),signal_index:d.signal_index,ground_truth_label:d.ground_truth_label,firmware_version:'SCA replay',data_source:'SCA_DATASET_REPLAY | '+where,online:true,device_connection:'ONLINE',data_status:'LIVE',last_seen_ms:now,last_seen_text:fmt(now),sensor_status:d.valid===true?'VALID':String(tp.status||'INVALID'),condition:condition,last_confirmed_condition:condition,candidate_condition:condition,confirmation_count:1,priority:PRI[condition],reason:reason,recommended_action:action,calibration_status:'COMPLETED',calibration_windows:12,calibration_required:12,baseline:baseline,motor_temp:null,mpu_temp:null,mean_magnitude:null,total_rms:rms,ac_rms:rms,ac_peak:null,peak_to_peak:num(f.peak_to_peak),kurtosis:num(f.kurtosis),crest_factor:num(f.crest_factor),deviation_ratio:ratio,sample_rate:num(d.sampling_rate_hz),sample_count:null,completeness:100,window_valid:d.valid===true,sequence_number:null,missing_messages:0});\nflow.set('lastTelemetryMs',now);\nlet tickets=flow.get('tickets')||[],events=flow.get('events')||[],prev=flow.get('prevCondition');\nlet dirty=false;const event=(text,severity='Info')=>{dirty=true;events.unshift({t:fmt(now),e:text,s:severity});};\nconst ticket=(type,priority,why)=>{dirty=true;if(!tickets.some(t=>t.status==='NEW'&&t.type===type)){tickets.unshift({ticket_id:mkId(),type,device_id:d.device_id,created_at:fmt(new Date()),priority,condition:s.condition,reason:why,status:'NEW',acknowledged_at:null,acknowledged_by:null,cleared_at:null});}};\nif(s.condition!==prev){event('Condition changed to '+s.condition+' ('+where+', GT label '+d.ground_truth_label+')',['CRITICAL','SENSOR_ERROR'].includes(s.condition)?'Fault':['OBSERVE','INSPECT'].includes(s.condition)?'Warning':'Info');}\nif(['INSPECT','SENSOR_ERROR'].includes(s.condition)&&s.condition!==prev)ticket('CONDITION_'+s.condition,s.priority,s.reason);\nlet invalidCount=flow.get('invalidWindowCount')||0;\ninvalidCount=s.window_valid?0:invalidCount+1;\nflow.set('invalidWindowCount',invalidCount);\nif(invalidCount>=3)ticket('INVALID_WINDOWS','HIGH','Three consecutive invalid replay rows');\nif(s.condition==='NORMAL'&&prev&&prev!=='NORMAL'){tickets.forEach(x=>{if(String(x.type).indexOf('CONDITION_')===0&&!x.cleared_at){x.cleared_at=fmt(now);dirty=true;}});}\nif(prev==='OFFLINE'){tickets.forEach(x=>{if(x.type==='DEVICE_OFFLINE'&&!x.cleared_at){x.cleared_at=fmt(now);dirty=true;}});}\nflow.set('prevCondition',s.condition);\nevents=events.slice(0,50);tickets=tickets.slice(0,50);s.events=events;s.tickets=tickets;flow.set('events',events);flow.set('tickets',tickets);flow.set('state',s);\nconst vals=[s.motor_temp,s.mpu_temp,s.ac_rms,s.ac_peak,s.baseline,s.deviation_ratio,s.sample_rate,s.completeness].map(v=>v===null?null:{payload:v});\nconst telemetryLog={payload:JSON.stringify({received_at:new Date(now).toISOString(),source:'sca_replay',data:d})};\nreturn [{payload:s},...vals,telemetryLog,dirty?{payload:JSON.stringify(tickets,null,2)}:null,dirty?{payload:JSON.stringify(events,null,2)}:null];\n",
+        "outputs": 12,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 635,
+        "wires": [
+            [
+                "9a2e20dee9e94186",
+                "259a21b91fe046ba",
+                "691f77e650cb4ff5",
+                "5a57280502aa4d16"
+            ],
+            [
+                "e0dbf955c23b4d19"
+            ],
+            [
+                "08e70c27768e4dfe"
+            ],
+            [
+                "854d2fa89ee24cde"
+            ],
+            [
+                "c8fb31b730e840cc"
+            ],
+            [
+                "ec2b59d1768e41bb"
+            ],
+            [
+                "ee510b6061c44cac"
+            ],
+            [
+                "7ec1bdf603b34f0e"
+            ],
+            [
+                "c55c7f07fc654d0a"
+            ],
+            [
+                "f24b307149ba4f00"
+            ],
+            [
+                "81e01142bf0543d7"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "32eec98cfdb44a48",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Process Device Status",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nlet d=msg.payload;if(typeof d==='string'){try{d=JSON.parse(d)}catch(e){return null;}}\nif(!d||!d.device_id)return null;\nconst st=String(d.state||d.status||'').toUpperCase();\n// the replay code publishes \"online\" every row; telemetry already keeps the state fresh, so only react to non-online states\nif(st==='ONLINE')return null;\nconst now=Date.now();\nlet s=flow.get('state')||{device_id:d.device_id,data_source:'SCA_DATASET_REPLAY'},events=flow.get('events')||[],tickets=flow.get('tickets')||[];\ns.online=false;s.device_connection=st||'OFFLINE';\nif(flow.get('lastTelemetryMs')&&s.condition!=='OFFLINE'){s.last_known_condition=s.condition;s.condition='OFFLINE';s.priority='HIGH';flow.set('prevCondition','OFFLINE');}\ns.data_status='OFFLINE';s.reason='Replay device reported '+(st||'OFFLINE');s.recommended_action='Check the Wokwi simulation, Wi-Fi and MQTT connection';\nevents.unshift({t:fmt(now),e:'Device '+(st||'OFFLINE'),s:'Fault'});events=events.slice(0,50);\ns.events=events;s.tickets=tickets;flow.set('events',events);flow.set('state',s);\nreturn [{payload:s},{payload:JSON.stringify({received_at:new Date().toISOString(),type:'STATUS',data:d})},{payload:JSON.stringify(events,null,2)}];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 765,
+        "wires": [
+            [
+                "9a2e20dee9e94186",
+                "259a21b91fe046ba",
+                "691f77e650cb4ff5",
+                "5a57280502aa4d16"
+            ],
+            [
+                "96e5bf525fb94bbb"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "ae37c38c1a2a4064",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Process Device Event",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nlet d=msg.payload;if(typeof d==='string'){try{d=JSON.parse(d)}catch(e){return null;}}if(!d||d.device_id!=='MOTOR_01')return null;let events=flow.get('events')||[],s=flow.get('state')||{};events.unshift({t:fmt(new Date()),e:d.event||'Device Event',s:'Info'});events=events.slice(0,50);s.events=events;s.tickets=flow.get('tickets')||[];flow.set('events',events);flow.set('state',s);return [{payload:s},{payload:JSON.stringify({received_at:new Date().toISOString(),type:'DEVICE_EVENT',data:d})},{payload:JSON.stringify(events,null,2)}];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 820,
+        "wires": [
+            [
+                "9a2e20dee9e94186",
+                "259a21b91fe046ba",
+                "691f77e650cb4ff5",
+                "5a57280502aa4d16"
+            ],
+            [
+                "96e5bf525fb94bbb"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "2bcfda8626be4100",
+        "type": "inject",
+        "z": "00395c0db0284aed",
+        "name": "Stale Check Every 5 Seconds",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 370,
+        "y": 880,
+        "wires": [
+            [
+                "65fd17ff148f4067"
+            ]
+        ]
+    },
+    {
+        "id": "65fd17ff148f4067",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Detect Stale Data",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nconst mkId=()=>{const n=(flow.get('alarmSeq')||0)+1;flow.set('alarmSeq',n);return 'ALM-'+fmt(new Date()).replace(/[-: ]/g,'')+'-'+String(n).padStart(3,'0');};\nconst now=Date.now(),last=flow.get('lastTelemetryMs')||0,age=last?now-last:Infinity;\nlet s=flow.get('state')||{device_id:'MOTOR_01',data_source:'WOKWI_SIMULATION'},events=flow.get('events')||[],tickets=flow.get('tickets')||[];\nconst T=s.thresholds||{},staleMs=(T.staleSec||15)*1000,alarmMs=(T.offlineAlarmSec||30)*1000;\nlet dirty=false;\nconst ev=(e,sev)=>{events.unshift({t:fmt(now),e:e,s:sev});dirty=true;};\nif(age>staleMs){\n  s.online=false;s.device_connection='OFFLINE';s.data_status=last?'STALE':'WAITING';\n  s.reason=last?'No telemetry for more than '+(staleMs/1000)+' seconds':'Waiting for first telemetry';\n  s.recommended_action='Check ESP32, broker, and MQTT topics';\n  s.last_seen_text=last?fmt(last)+' ('+Math.floor(age/1000)+'s ago)':'Never';\n  if(last&&s.condition!=='OFFLINE'){s.last_known_condition=s.condition;s.condition='OFFLINE';s.priority='HIGH';flow.set('prevCondition','OFFLINE');ev('Telemetry lost - condition set to OFFLINE','Fault');}\n  if(age>alarmMs&&!tickets.some(x=>x.status==='NEW'&&x.type==='DEVICE_OFFLINE')){\n    tickets.unshift({ticket_id:mkId(),type:'DEVICE_OFFLINE',device_id:'MOTOR_01',created_at:fmt(now),priority:'HIGH',condition:'OFFLINE',reason:'No telemetry for more than '+(alarmMs/1000)+' seconds',status:'NEW',acknowledged_at:null,acknowledged_by:null,cleared_at:null});\n    ev('Device offline alarm created','Fault');\n  }\n}else{\n  s.online=true;s.device_connection='ONLINE';s.data_status='LIVE';s.last_seen_text=fmt(last)+' ('+Math.floor(age/1000)+'s ago)';\n}\nevents=events.slice(0,50);tickets=tickets.slice(0,50);s.events=events;s.tickets=tickets;\nflow.set('events',events);flow.set('tickets',tickets);flow.set('state',s);\nreturn [{payload:s},dirty?{payload:JSON.stringify(tickets,null,2)}:null,dirty?{payload:JSON.stringify(events,null,2)}:null];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 880,
+        "wires": [
+            [
+                "9a2e20dee9e94186",
+                "259a21b91fe046ba",
+                "691f77e650cb4ff5",
+                "5a57280502aa4d16"
+            ],
+            [
+                "81e01142bf0543d7"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "df4a30f6e67044b3",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Dashboard Actions",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nconst p=msg.payload||{},now=Date.now();let tickets=flow.get('tickets')||[],events=flow.get('events')||[],cmd=null;let s=flow.get('state')||{};if(p.action==='ACK'&&p.ticket_id){let t=tickets.find(x=>x.ticket_id===p.ticket_id);if(t&&t.status==='NEW'){t.status='ACKNOWLEDGED';t.acknowledged_at=fmt(new Date());t.acknowledged_by=p.user||'Dashboard Engineer';events.unshift({t:fmt(new Date()),e:'Alarm '+p.ticket_id+' acknowledged by '+t.acknowledged_by,s:'Info'});}}else if(p.action==='RECALIBRATE'){const last=flow.get('lastRecalibrateCommand')||0;if(!s.online){events.unshift({t:fmt(new Date()),e:'Recalibration blocked: device offline',s:'Warning'});}else if(s.calibration_status==='IN_PROGRESS'){events.unshift({t:fmt(new Date()),e:'Recalibration blocked: calibration already in progress',s:'Warning'});}else if(now-last<10000){events.unshift({t:fmt(new Date()),e:'Recalibration blocked by 10-second cooldown',s:'Warning'});}else{flow.set('lastRecalibrateCommand',now);cmd='RECALIBRATE';events.unshift({t:fmt(new Date()),e:'Recalibration requested by Dashboard Engineer',s:'Info'});}}else if(p.action==='PING'){cmd='PING';flow.set('lastPingSent',now);events.unshift({t:fmt(new Date()),e:'PING command sent to ESP32',s:'Info'});}events=events.slice(0,50);s.tickets=tickets;s.events=events;flow.set('tickets',tickets);flow.set('events',events);flow.set('state',s);return [{payload:s},cmd?{payload:cmd}:null,{payload:JSON.stringify(tickets,null,2)},{payload:JSON.stringify(events,null,2)}];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 795,
+        "wires": [
+            [
+                "9a2e20dee9e94186",
+                "259a21b91fe046ba",
+                "691f77e650cb4ff5",
+                "5a57280502aa4d16"
+            ],
+            [
+                "29dbaa74c6e64331"
+            ],
+            [
+                "81e01142bf0543d7"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "eabf7e5ad9d94a19",
+        "type": "file",
+        "z": "00395c0db0284aed",
+        "name": "Save Events Snapshot",
+        "filename": "motor_data/motor_events_snapshot.json",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1660,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f24b307149ba4f00",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Daily Telemetry Log Path",
+        "func": "const dt=new Date();const day=dt.toISOString().slice(0,10);msg.filename='motor_data/motor_telemetry_'+day+'.jsonl';return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1790,
+        "y": 940,
+        "wires": [
+            [
+                "7f59e62db3a24d4d"
+            ]
+        ]
+    },
+    {
+        "id": "96e5bf525fb94bbb",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Daily Event Log Path",
+        "func": "const dt=new Date();const day=dt.toISOString().slice(0,10);msg.filename='motor_data/motor_events_'+day+'.jsonl';return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1780,
+        "y": 1000,
+        "wires": [
+            [
+                "4ca89a57e0fd426b"
+            ]
+        ]
+    },
+    {
+        "id": "dc01a9e282674210",
+        "type": "inject",
+        "z": "00395c0db0284aed",
+        "name": "Restore Persistent State at Startup",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.8",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 1070,
+        "wires": [
+            [
+                "c369e64ad6384a4e",
+                "a2d44ee628524331"
+            ]
+        ]
+    },
+    {
+        "id": "c369e64ad6384a4e",
+        "type": "file in",
+        "z": "00395c0db0284aed",
+        "name": "Read Tickets Snapshot",
+        "filename": "motor_data/motor_tickets.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": true,
+        "encoding": "none",
+        "allProps": false,
+        "x": 890,
+        "y": 1050,
+        "wires": [
+            [
+                "26d595597cc84af5"
+            ]
+        ]
+    },
+    {
+        "id": "a2d44ee628524331",
+        "type": "file in",
+        "z": "00395c0db0284aed",
+        "name": "Read Events Snapshot",
+        "filename": "motor_data/motor_events_snapshot.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": true,
+        "encoding": "none",
+        "allProps": false,
+        "x": 890,
+        "y": 1100,
+        "wires": [
+            [
+                "fabcd67301644493"
+            ]
+        ]
+    },
+    {
+        "id": "26d595597cc84af5",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Restore Tickets",
+        "func": "try{let x=JSON.parse(msg.payload);if(Array.isArray(x))flow.set('tickets',x);}catch(e){flow.set('tickets',[]);}return null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 1050,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fabcd67301644493",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Restore Events",
+        "func": "try{let x=JSON.parse(msg.payload);if(Array.isArray(x))flow.set('events',x.slice(0,50));}catch(e){flow.set('events',[]);}return null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d37e2a149064366",
+        "type": "catch",
+        "z": "00395c0db0284aed",
+        "name": "Catch File and Runtime Errors",
+        "scope": null,
+        "uncaught": false,
+        "x": 610,
+        "y": 1170,
+        "wires": [
+            [
+                "4d7c509b77f54bc0"
+            ]
+        ]
+    },
+    {
+        "id": "4d7c509b77f54bc0",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "Format Error Event",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nconst text=(msg.error&&msg.error.message)||'Unknown Node-RED error';const source=(msg.error&&msg.error.source&&msg.error.source.name)||'Unknown node';let events=flow.get('events')||[];events.unshift({t:fmt(new Date()),e:'Runtime error in '+source+': '+text,s:'Fault'});events=events.slice(0,50);flow.set('events',events);if(text.includes('ENOENT')){if(source.includes('Tickets'))return [{payload:'[]'},null,{payload:JSON.stringify(events,null,2)}];if(source.includes('Events'))return [null,{payload:'[]'},{payload:JSON.stringify(events,null,2)}];}return [null,null,{payload:JSON.stringify(events,null,2)}];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1170,
+        "wires": [
+            [
+                "81e01142bf0543d7"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ],
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "7f92153066b7431a",
+        "type": "status",
+        "z": "00395c0db0284aed",
+        "name": "Monitor MQTT Node Status",
+        "scope": [
+            "6773c5afd75f4a89",
+            "f945879fc4c94fff",
+            "7a7b1d9391d24eca",
+            "29dbaa74c6e64331"
+        ],
+        "x": 610,
+        "y": 1230,
+        "wires": [
+            [
+                "791c6a5abedb4243"
+            ]
+        ]
+    },
+    {
+        "id": "791c6a5abedb4243",
+        "type": "function",
+        "z": "00395c0db0284aed",
+        "name": "MQTT Status to Event",
+        "func": "const pad=n=>String(n).padStart(2,'0');const fmt=x=>{const d=x instanceof Date?x:new Date(x);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());};\nconst text=msg.status&&msg.status.text?msg.status.text:'unknown';const fill=msg.status&&msg.status.fill?msg.status.fill:'grey';let events=flow.get('events')||[];events.unshift({t:fmt(new Date()),e:'MQTT node status: '+text,s:fill==='red'?'Fault':fill==='yellow'?'Warning':'Info'});events=events.slice(0,50);flow.set('events',events);return {payload:JSON.stringify(events,null,2)};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1230,
+        "wires": [
+            [
+                "eabf7e5ad9d94a19"
+            ]
+        ]
+    },
+    {
+        "id": "final_ui_base",
+        "type": "ui-base",
+        "name": "Smart Motor Monitoring",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page_name",
+        "navigationStyle": "temporary",
+        "titleBarStyle": "fixed"
+    },
+    {
+        "id": "final_page_home",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "final_ui_base",
+        "path": "/home",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "final_ui_theme",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "final_group_home",
+        "type": "ui-group",
+        "name": "Industrial Home",
+        "page": "final_page_home",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "final_group_kpis",
+        "type": "ui-group",
+        "name": "KPIs & Motor",
+        "page": "final_page_kpi",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "final_group_alarms",
+        "type": "ui-group",
+        "name": "Alarm Management",
+        "page": "final_page_alarms",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "final_group_trends_header",
+        "type": "ui-group",
+        "name": "Trends Header",
+        "page": "final_page_trends",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_temp",
+        "type": "ui-group",
+        "name": "Motor Temperature",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_mput",
+        "type": "ui-group",
+        "name": "MPU Temperature",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_rms",
+        "type": "ui-group",
+        "name": "AC RMS",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_peak",
+        "type": "ui-group",
+        "name": "AC Peak",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_base",
+        "type": "ui-group",
+        "name": "Baseline RMS",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 6,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_ratio",
+        "type": "ui-group",
+        "name": "Deviation Ratio",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 7,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_rate",
+        "type": "ui-group",
+        "name": "Sample Rate",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 8,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "trend_group_comp",
+        "type": "ui-group",
+        "name": "Completeness",
+        "page": "final_page_trends",
+        "width": "6",
+        "height": "1",
+        "order": 9,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "final_mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Public - SCA Replay",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "final_ui_theme",
+        "type": "ui-theme",
+        "name": "Industrial Dark",
+        "colors": {
+            "surface": "#081422",
+            "primary": "#1478ff",
+            "bgPage": "#040a14",
+            "groupBg": "#081422",
+            "groupOutline": "#1c2d4d",
+            "groupText": "#e6edf7",
+            "pageTitlebarBackgroundColor": "#07101f",
+            "pageSidebarBackgroundColor": "#081422",
+            "pageAppbarBackgroundColor": "#07101f",
+            "pageAppBarBackgroundColor": "#07101f"
+        },
+        "sizes": {
+            "pagePadding": "8px",
+            "groupGap": "8px",
+            "groupBorderRadius": "8px",
+            "widgetGap": "8px",
+            "density": "default"
+        }
+    },
+    {
+        "id": "final_page_kpi",
+        "type": "ui-page",
+        "name": "KPIs & Motor",
+        "ui": "final_ui_base",
+        "path": "/kpis",
+        "icon": "speedometer",
+        "layout": "grid",
+        "theme": "final_ui_theme",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "final_page_alarms",
+        "type": "ui-page",
+        "name": "Alarms & Tickets",
+        "ui": "final_ui_base",
+        "path": "/alarms",
+        "icon": "bell-alert",
+        "layout": "grid",
+        "theme": "final_ui_theme",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "final_page_trends",
+        "type": "ui-page",
+        "name": "System Trends",
+        "ui": "final_ui_base",
+        "path": "/trends",
+        "icon": "chart-line",
+        "layout": "grid",
+        "theme": "final_ui_theme",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "178d1a22cc143d74",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.33.0"
+        }
+    }
+]
